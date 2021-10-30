@@ -10,8 +10,8 @@ export const globalStyles = globalCss({
     lineHeight: '$8',
     fontWeight: '900',
     '@bp1': {
-      fontSize: '$9',
-      lineHeight: '$9',
+      fontSize: '$10',
+      lineHeight: '$10',
       fontWeight: '900',
     },
   },
