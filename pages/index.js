@@ -13,6 +13,13 @@ import { Sidebar } from '../components/Sidebar';
 export default function Home() {
   const [step, setStep] = useState(0);
   const { theme, setTheme } = useTheme();
+  const { colors, setColors } = useTheme({
+    primary: '$blue9',
+    secondary: '$tomato9',
+    tertiary: '$slate9',
+    error: '$red9',
+    success: '$green9',
+  });
   const [jsonObject, setJsonObject] = useState({
 
     space: { },
@@ -80,13 +87,13 @@ export default function Home() {
   };
 
   return (
-    <Box css={{ background: '$primary' }}>
+    <Box css={{ bg: '$sage3' }}>
 
       {/* <Header /> */}
 
       <Sidebar jsonObject={jsonObject} addToJson={addToJson} />
       <Box css={{
-        maxWidth: '1500px', margin: 'auto', p: '$9', marginLeft: '500px',
+        margin: 'auto', p: '$9', marginLeft: '500px',
       }}
       >
         <Box css={{ display: 'flex' }}>
@@ -102,12 +109,16 @@ export default function Home() {
             >
               <SunIcon onClick={() => (theme === 'dark' ? setTheme('light') : setTheme('dark'))} aria-label="toggle a light and dark color scheme" />
 
-              {step > 0 && <Button size="small" bg="slate" css={{ marginLeft: '20px' }} as="button" onClick={() => setStep((prevStep) => prevStep && prevStep - 1)}>previous</Button>}
+              {/* {step > 0 && <Button size="small" bg="slate" css={{ marginLeft: '20px' }} as="button" onClick={() => setStep((prevStep) => prevStep && prevStep - 1)}>previous</Button>}
 
-              <Button css={{ mx: '20px' }} size="small" bg="slate" as="button" onClick={() => setStep((prevStep) => prevStep + 1)}>next</Button>
+              <Button css={{ mx: '20px' }} size="small" bg="slate" as="button" onClick={() => setStep((prevStep) => prevStep + 1)}>next</Button> */}
             </Box>
 
-            <View step={step} addToJson={addToJson} />
+            <View
+              step={step}
+              addToJson={addToJson}
+              jsonObject={jsonObject}
+            />
 
           </Box>
         </Box>

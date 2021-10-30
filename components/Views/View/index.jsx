@@ -1,45 +1,75 @@
-import React from 'react';
+import { Text } from '../../Text';
+import { Button } from '../../Button';
+import { styled } from '../../../theme/stitches.config';
 
-import { Box } from '../../Box';
-import { Colors } from '../Colors';
+import { ThemeColors } from '../Colors/ThemeColors';
 import { Space } from '../Space';
-import { FontSizes } from '../FontSizes';
-import { LineHeights } from '../LineHeights';
 
-export const View = ({ step, addToJson }) => (
-  <Box css={{ py: '$8' }}>
+export const View = ({ step, addToJson, jsonObject }) => {
+  const Section = styled('section', {
+    padding: '$9 0',
+    bg: '$loContrast',
+  });
 
-    {step === 0
-    && (
-    <Box
-      css={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, minmax(100px, 1fr))',
-        width: '100%',
-        justifyContent: 'center',
-      }}
-    />
-    )
-    || (step === 1
-      && (
-      <Box>
-        <Space addToJson={addToJson} />
-      </Box>
-      )
-    )
-    || (step === 2
-      && (
-      <Box>
-        <FontSizes addToJson={addToJson} />
-      </Box>
-      )
-    )
-    || (step === 3
-      && (
-      <Box>
-        <LineHeights addToJson={addToJson} />
-      </Box>
-      )
-    )}
-  </Box>
-);
+  const Container = styled('div', {
+    boxSizing: 'border-box',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    maxWidth: '1450px',
+    padding: '$6 $10',
+
+    '@bp1': {
+      px: '$8',
+      py: '$10',
+    },
+    '@bp2': {
+      px: '$10',
+      py: '$10',
+    },
+    '@bp3': {
+      px: '$12',
+      py: '$10',
+    },
+
+    variants: {
+      size: {
+        none: {
+          maxWidth: 'none',
+        },
+        1: {
+          maxWidth: '520px',
+        },
+        2: {
+          maxWidth: '800px',
+        },
+        3: {
+          maxWidth: '1200px',
+        },
+
+      },
+    },
+  });
+
+  const Box = styled('div', {
+    padding: '30px',
+    color: '$tomato9',
+  });
+
+  return (
+    <>
+      <Section css={{ mt: '$8' }}>
+        <Container>
+          <Text size="sm" color="green">Tools for Developers & Designers</Text>
+          <Text as="h1">Subscribe to be aware and almost before people knew it, we had left the ground.</Text>
+          <Box>
+            <Button wide bg="blue" mr="5"> Subscribe</Button>
+            <Button wide bg="tomato"> Try Demo</Button>
+          </Box>
+        </Container>
+      </Section>
+      <ThemeColors color={jsonObject.colors} />
+      <Space />
+    </>
+
+  );
+};

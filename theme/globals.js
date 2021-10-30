@@ -2,7 +2,9 @@ import { globalCss } from './stitches.config';
 
 export const globalStyles = globalCss({
   html: { m: 0, p: 0 },
-  body: { m: 0, p: 0, fontFamily: '$body' },
+  body: {
+    m: 0, p: 0, fontFamily: '$body',
+  },
   '*': { margin: 0, padding: 0, boxSizing: 'border-box' },
 
   h1: {

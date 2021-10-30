@@ -6,6 +6,7 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 import { Button } from '../Button';
 import { Colors } from '../Views/Colors';
+import { Space } from '../Views/Space';
 import { styled } from '../../theme/stitches.config';
 import {
   Tabs, TabsList, TabsTrigger, TabsContent,
@@ -49,7 +50,8 @@ export const Sidebar = ({ jsonObject, addToJson }) => (
 
       </TabsContent>
       <TabsContent value="tab2">
-        <Text>Change your password here. After saving, you'll be logged out.</Text>
+        <Text css={{ paddingBottom: '$4', fontWeight: '$1' }}>Space</Text>
+        <Space />
 
       </TabsContent>
 

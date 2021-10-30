@@ -36,7 +36,6 @@ export const Space = ({ addToJson }) => {
 
   return (
     <Box>
-      <Text as="h1">Space</Text>
 
       <Box css={{
         marginTop: '40px',

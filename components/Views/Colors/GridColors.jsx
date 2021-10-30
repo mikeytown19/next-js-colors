@@ -2,13 +2,11 @@ import React from 'react';
 import { PlusCircledIcon } from '@modulz/radix-icons';
 import { Text } from '../../Text';
 import { Box } from '../../Box';
-import TooltipDemo from '../../Tooltip';
 
 export const GridColors = ({
-  color, name, darkColor, addToJson,
+  color, name, addToJson,
 }) => (
   <Box>
-
     <Text css={{ paddingBottom: '$3', fs: '$2', borderBottom: `solid 4px $${name}3` }}>{name}</Text>
 
     <Box
@@ -46,16 +44,7 @@ export const GridColors = ({
         }}
         onClick={() => addToJson(color, 'colors')}
       >
-        <TooltipDemo
-          text="Added to Theme"
-          css={{
-            boxShadow: `0 2px 10px $${name}3`,
-            '&:hover': { backgroundColor: `$${name}3` },
-            '&:focus': { boxShadow: '0 0 0 2px black' },
-          }}
-        >
-          <PlusCircledIcon />
-        </TooltipDemo>
+        <PlusCircledIcon />
 
       </Text>
     </Box>
