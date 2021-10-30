@@ -83,8 +83,10 @@ export default function Home() {
     <Box css={{ background: '$primary' }}>
 
       {/* <Header /> */}
+
+      <Sidebar jsonObject={jsonObject} addToJson={addToJson} />
       <Box css={{
-        maxWidth: '1500px', margin: 'auto', p: '$9', marginRight: '300px',
+        maxWidth: '1500px', margin: 'auto', p: '$9', marginLeft: '500px',
       }}
       >
         <Box css={{ display: 'flex' }}>
@@ -110,7 +112,6 @@ export default function Home() {
           </Box>
         </Box>
       </Box>
-      <Sidebar jsonObject={jsonObject} />
 
     </Box>
   );

@@ -18,9 +18,7 @@ export const View = ({ step, addToJson }) => (
         width: '100%',
         justifyContent: 'center',
       }}
-    >
-      <Colors addToJson={addToJson} />
-    </Box>
+    />
     )
     || (step === 1
       && (
