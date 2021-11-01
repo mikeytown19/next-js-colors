@@ -6,6 +6,7 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 import { Button } from '../Button';
 import { Colors } from '../Views/Colors';
+import { PrimaryColors } from '../Views/Colors/PrimaryColors';
 import { Space } from '../Views/Space';
 import { styled } from '../../theme/stitches.config';
 import {
@@ -18,7 +19,10 @@ const StyledHighlighter = styled(SyntaxHighlighter, {
   backgroundColor: 'inherit !important',
 });
 
-export const Sidebar = ({ jsonObject, addToJson }) => (
+export const Sidebar = ({
+  jsonObject, addToJson, colors,
+  setColors,
+}) => (
   <Box css={{
     position: 'fixed',
     top: '0px',
@@ -46,7 +50,28 @@ export const Sidebar = ({ jsonObject, addToJson }) => (
       </TabsList>
       <TabsContent value="tab1">
         <Text css={{ paddingBottom: '$4', fontWeight: '$1' }}>Colors</Text>
-        <Colors addToJson={addToJson} />
+        <Tabs defaultValue="sub_tab1">
+          <TabsList aria-label="Manage your account">
+            <TabsTrigger value="sub_tab1">Main Pallet</TabsTrigger>
+            <TabsTrigger value="sub_tab2">Primary Colors</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="sub_tab1">
+            <Colors
+              addToJson={addToJson}
+              colors={colors}
+              setColors={setColors}
+            />
+          </TabsContent>
+          <TabsContent value="sub_tab2">
+            <PrimaryColors
+              color={jsonObject.colors}
+              addToJson={addToJson}
+              colors={colors}
+              setColors={setColors}
+            />
+          </TabsContent>
+        </Tabs>
 
       </TabsContent>
       <TabsContent value="tab2">

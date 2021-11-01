@@ -42,7 +42,9 @@ export const GridColors = ({
             cursor: 'pointer',
           },
         }}
-        onClick={() => addToJson(color, 'colors')}
+        onClick={() => {
+          addToJson(color, 'colors');
+        }}
       >
         <PlusCircledIcon />
 

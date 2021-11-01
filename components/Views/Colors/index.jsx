@@ -67,12 +67,6 @@ import { GridColors } from './GridColors';
 
 export const Colors = ({ addToJson }) => (
   < >
-    <GridColors addToJson={addToJson} name="gray" color={gray} darkColor={grayDark} />
-    <GridColors addToJson={addToJson} name="mauve" color={mauve} darkColor={mauveDark} />
-    <GridColors addToJson={addToJson} name="slate" color={slate} darkColor={slateDark} />
-    <GridColors addToJson={addToJson} name="sage" color={sage} darkColor={sageDark} />
-    <GridColors addToJson={addToJson} name="olive" color={olive} darkColor={oliveDark} />
-    <GridColors addToJson={addToJson} name="sand" color={sand} darkColor={sandDark} />
     <GridColors addToJson={addToJson} name="tomato" color={tomato} darkColor={tomatoDark} />
     <GridColors addToJson={addToJson} name="red" color={red} darkColor={redDark} />
     <GridColors addToJson={addToJson} name="crimson" color={crimson} darkColor={crimsonDark} />
@@ -96,5 +90,11 @@ export const Colors = ({ addToJson }) => (
     <GridColors addToJson={addToJson} name="gold" color={gold} darkColor={goldDark} />
     <GridColors addToJson={addToJson} name="bronze" color={bronze} darkColor={bronzeDark} />
     <GridColors addToJson={addToJson} name="whiteA" color={whiteA} darkColor={whiteADark} />
+    <GridColors addToJson={addToJson} name="gray" color={gray} darkColor={grayDark} />
+    <GridColors addToJson={addToJson} name="mauve" color={mauve} darkColor={mauveDark} />
+    <GridColors addToJson={addToJson} name="slate" color={slate} darkColor={slateDark} />
+    <GridColors addToJson={addToJson} name="sage" color={sage} darkColor={sageDark} />
+    <GridColors addToJson={addToJson} name="olive" color={olive} darkColor={oliveDark} />
+    <GridColors addToJson={addToJson} name="sand" color={sand} darkColor={sandDark} />
     <GridColors addToJson={addToJson} name="blackA" color={blackA} darkColor={blackADark} />
   </>);

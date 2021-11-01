@@ -1,11 +1,18 @@
+import React from 'react';
 import { Text } from '../../Text';
 import { Button } from '../../Button';
-import { styled } from '../../../theme/stitches.config';
-
+import { styled, createTheme } from '../../../theme/stitches.config';
 import { ThemeColors } from '../Colors/ThemeColors';
 import { Space } from '../Space';
 
-export const View = ({ step, addToJson, jsonObject }) => {
+export const View = ({
+  step, addToJson, jsonObject, colors,
+}) => {
+  const customTheme = createTheme('custom-theme', {
+    ...jsonObject,
+  });
+
+  console.log(customTheme);
   const Section = styled('section', {
     padding: '$9 0',
     bg: '$loContrast',
@@ -56,20 +63,20 @@ export const View = ({ step, addToJson, jsonObject }) => {
   });
 
   return (
-    <>
+    <main className={customTheme}>
       <Section css={{ mt: '$8' }}>
         <Container>
           <Text size="sm" color="green">Tools for Developers & Designers</Text>
           <Text as="h1">Subscribe to be aware and almost before people knew it, we had left the ground.</Text>
           <Box>
-            <Button wide bg="blue" mr="5"> Subscribe</Button>
-            <Button wide bg="tomato"> Try Demo</Button>
+            <Button wide css={{ bg: `$${colors.primary}9` }} mr="5"> Primary Button</Button>
+            <Button wide css={{ bg: `$${colors.secondary}9` }}> Secondary</Button>
           </Box>
         </Container>
       </Section>
       <ThemeColors color={jsonObject.colors} />
       <Space />
-    </>
+    </main>
 
   );
 };
