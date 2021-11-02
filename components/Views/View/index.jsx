@@ -6,13 +6,12 @@ import { ThemeColors } from '../Colors/ThemeColors';
 import { Space } from '../Space';
 
 export const View = ({
-  step, addToJson, jsonObject, colors,
+  jsonObject, colors,
 }) => {
   const customTheme = createTheme('custom-theme', {
     ...jsonObject,
   });
 
-  console.log(customTheme);
   const Section = styled('section', {
     padding: '$9 0',
     bg: '$loContrast',
@@ -62,21 +61,57 @@ export const View = ({
     color: '$tomato9',
   });
 
+  const Main = styled('main');
+
   return (
-    <main className={customTheme}>
-      <Section css={{ mt: '$8' }}>
+    <Main className={customTheme} css={{ flex: '1' }}>
+
+      <Section
+        css={{
+          bg: `$${colors.container_bg}1`,
+          mt: '$8',
+        }}
+
+      >
         <Container>
-          <Text size="sm" color="green">Tools for Developers & Designers</Text>
-          <Text as="h1">Subscribe to be aware and almost before people knew it, we had left the ground.</Text>
+          <Text
+            size="sm"
+            css={{
+              mb: '$8',
+              color: `$${colors.tertiary}10`,
+            }}
+          >A headline for the ages.
+          </Text>
+          <Text css={{ mb: '$8', color: `$${colors.text}12` }} as="h1">There is no strife, no prejudice, no national conflict in outer space as yet.</Text>
           <Box>
-            <Button wide css={{ bg: `$${colors.primary}9` }} mr="5"> Primary Button</Button>
-            <Button wide css={{ bg: `$${colors.secondary}9` }}> Secondary</Button>
+            <Button
+              css={{
+                p: jsonObject.space[5],
+                bg: `$${colors.primary}9`,
+                '&:hover': {
+                  bg: `$${colors.primary}10`,
+                },
+              }}
+              mr="5"
+            > Primary Button
+            </Button>
+            <Button
+              css={{
+                p: jsonObject.space[5],
+                bg: `$${colors.secondary}9`,
+                '&:hover': {
+                  bg: `$${colors.secondary}10`,
+                },
+              }}
+            > Secondary
+            </Button>
           </Box>
         </Container>
       </Section>
+
       <ThemeColors color={jsonObject.colors} />
       <Space />
-    </main>
+    </Main>
 
   );
 };

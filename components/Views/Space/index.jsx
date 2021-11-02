@@ -4,11 +4,6 @@ import { Box } from '../../Box';
 import { Button } from '../../Button';
 
 export const Space = ({ addToJson }) => {
-  const [sizes, setSizes] = useState({});
-  const handleClick = () => {
-    console.log('click');
-  };
-
   function fontSizes(num) {
     const obj = {};
     for (let i = 0; i <= 7; i++) {
@@ -41,7 +36,7 @@ export const Space = ({ addToJson }) => {
         marginTop: '40px',
       }}
       >
-        <Button bg="slate" onClick={() => addToJson(data, 'space')}>Kich Spacing</Button>
+        <Button bg="slate" onClick={() => addToJson(data, 'space', true)}>Kich Spacing</Button>
         <Box css={{
           display: 'flex',
           flexWrap: 'wrap',
@@ -68,7 +63,7 @@ export const Space = ({ addToJson }) => {
         marginTop: '40px',
       }}
       >
-        <Button bg="indigo" onClick={() => addToJson(fucc, 'space')}>Fibonacci Spacing</Button>
+        <Button bg="indigo" onClick={() => addToJson(fucc, 'space', true)}>Fibonacci Spacing</Button>
 
         <Box css={{
           display: 'flex',

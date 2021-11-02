@@ -5,11 +5,11 @@ import { Box } from '../../Box';
 import DropdownMenuDemo from '../../Dropdown';
 // replace(/[0-9]/g, '')
 export const PrimaryColors = ({
-  color,
+
   addToJson,
   colors,
   setColors,
-}) => console.log(colors) || (
+}) => (
   <Box>
     <Text as="h2" css={{ mt: '$10', mb: '$6' }}>Theme Colors</Text>
 
@@ -21,14 +21,14 @@ export const PrimaryColors = ({
 
       }}
     >
-
       <Box css={{
-
         display: 'flex', alignItems: 'center', mb: '$4', jc: 'space-between',
       }}
       >
-        <Text>primary</Text>
+        <Text css={{ fs: '$1' }}>primary</Text>
         <DropdownMenuDemo
+          addToJson={addToJson}
+          token="primary"
           colors={colors}
           setColors={setColors}
         />
@@ -37,29 +37,75 @@ export const PrimaryColors = ({
         display: 'flex', alignItems: 'center', mb: '$4', jc: 'space-between',
       }}
       >
-        <Text>secondary</Text>
-        <DropdownMenuDemo />
+        <Text css={{ fs: '$1' }}>secondary</Text>
+        <DropdownMenuDemo
+          addToJson={addToJson}
+          token="secondary"
+          colors={colors}
+          setColors={setColors}
+        />
       </Box>
       <Box css={{
         display: 'flex', alignItems: 'center', mb: '$4', jc: 'space-between',
       }}
       >
-        <Text>tertiary</Text>
-        <DropdownMenuDemo />
+        <Text css={{ fs: '$1' }}>tertiary</Text>
+        <DropdownMenuDemo
+          addToJson={addToJson}
+          token="tertiary"
+          colors={colors}
+          setColors={setColors}
+        />
       </Box>
       <Box css={{
         display: 'flex', alignItems: 'center', mb: '$4', jc: 'space-between',
       }}
       >
-        <Text>error</Text>
-        <DropdownMenuDemo />
+        <Text css={{ fs: '$1' }}>error</Text>
+        <DropdownMenuDemo
+          addToJson={addToJson}
+          token="error"
+          colors={colors}
+          setColors={setColors}
+        />
       </Box>
       <Box css={{
         display: 'flex', alignItems: 'center', mb: '$4', jc: 'space-between',
       }}
       >
-        <Text>success</Text>
-        <DropdownMenuDemo />
+        <Text css={{ fs: '$1' }}>success</Text>
+        <DropdownMenuDemo
+          addToJson={addToJson}
+          token="success"
+          colors={colors}
+          setColors={setColors}
+        />
+      </Box>
+
+      <Box css={{
+        display: 'flex', alignItems: 'center', mb: '$4', jc: 'space-between',
+      }}
+      >
+        <Text css={{ fs: '$1' }}>text</Text>
+        <DropdownMenuDemo
+          addToJson={addToJson}
+          token="text"
+          colors={colors}
+          setColors={setColors}
+        />
+      </Box>
+
+      <Box css={{
+        display: 'flex', alignItems: 'center', mb: '$4', jc: 'space-between',
+      }}
+      >
+        <Text css={{ fs: '$1' }}>container_bg</Text>
+        <DropdownMenuDemo
+          addToJson={addToJson}
+          token="container_bg"
+          colors={colors}
+          setColors={setColors}
+        />
       </Box>
 
     </Box>

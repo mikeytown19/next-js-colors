@@ -1,123 +1,216 @@
-import { css } from '../stitches.config';
+import {
+  gray,
+  grayDark,
+  mauve,
+  mauveDark,
+  slate,
+  slateDark,
+  sage,
+  sageDark,
+  olive,
+  oliveDark,
+  sand,
+  sandDark,
+  tomato,
+  tomatoDark,
+  red,
+  redDark,
+  crimson,
+  crimsonDark,
+  pink,
+  pinkDark,
+  plum,
+  plumDark,
+  purple,
+  purpleDark,
+  violet,
+  violetDark,
+  indigo,
+  indigoDark,
+  blue,
+  blueDark,
+  cyan,
+  cyanDark,
+  teal,
+  tealDark,
+  green,
+  greenDark,
+  grass,
+  grassDark,
+  brown,
+  brownDark,
+  orange,
+  orangeDark,
+  sky,
+  skyDark,
+  mint,
+  mintDark,
+  lime,
+  limeDark,
+  yellow,
+  yellowDark,
+  amber,
+  amberDark,
+  gold,
+  goldDark,
+  bronze,
+  bronzeDark,
+  whiteA,
+  whiteADark,
+  blackA,
+  blackADark,
+} from '@radix-ui/colors';
 
-export const colorVariants = css({
-  variants: {
-    color: {
-      red: {
-        color: '$red11',
-      },
-      crimson: {
-        color: '$crimson11',
-      },
-      pink: {
-        color: '$pink11',
-      },
-      purple: {
-        color: '$purple11',
-      },
-      violet: {
-        color: '$violet11',
-      },
-      indigo: {
-        color: '$indigo11',
-      },
-      blue: {
-        color: '$blue11',
-      },
-      turquoise: {
-        color: '$turquoise11',
-      },
-      teal: {
-        color: '$teal11',
-      },
-      green: {
-        color: '$green11',
-      },
-      lime: {
-        color: '$lime11',
-      },
-      yellow: {
-        color: '$yellow9',
-      },
-      orange: {
-        color: '$orange11',
-      },
-      gold: {
-        color: '$gold11',
-      },
-      bronze: {
-        color: '$bronze11',
-      },
-      gray: {
-        color: '$gray11',
-      },
-      contrast: {
-        color: '$hiContrast',
-      },
-      white: {
-        color: '$whiteA12',
-      },
-    },
-  },
-});
+export const radixColors = [
 
-export const backgroundColorVariants = css({
-  variants: {
-    bg: {
-      primary: {
-        bg: '$yellow2',
-      },
-      red: {
-        bg: '$red2',
-      },
-      crimson: {
-        bg: '$crimson2',
-      },
-      pink: {
-        bg: '$pink2',
-      },
-      purple: {
-        bg: '$purple2',
-      },
-      violet: {
-        bg: '$violet2',
-      },
-      indigo: {
-        bg: '$indigo2',
-      },
-      blue: {
-        bg: '$blue2',
-      },
-      tomato: {
-        bg: '$tomato2',
-      },
-      teal: {
-        bg: '$teal2',
-      },
-      green: {
-        bg: '$green2',
-      },
-      lime: {
-        bg: '$lime2',
-      },
-      yellow: {
-        bg: '$yellow2',
-      },
-      orange: {
-        bg: '$orange2',
-      },
-      gold: {
-        bg: '$gold2',
-      },
-      bronze: {
-        bg: '$bronze2',
-      },
-      gray: {
-        bg: '$gray2',
-      },
-      contrast: {
-        bg: '$hiContrast',
-      },
-    },
+  {
+    light: { ...tomato },
+    dark: { ...tomatoDark },
+    name: 'tomato',
   },
-});
+  {
+    light: { ...red },
+    dark: { ...redDark },
+    name: 'red',
+  },
+  {
+    light: { ...crimson },
+    dark: { ...crimsonDark },
+    name: 'crimson',
+  },
+  {
+    light: { ...pink },
+    dark: { ...pinkDark },
+    name: 'pink',
+  },
+  {
+    light: { ...plum },
+    dark: { ...plumDark },
+    name: 'plum',
+  },
+  {
+    light: { ...purple },
+    dark: { ...purpleDark },
+    name: 'purple',
+  },
+  {
+    light: { ...violet },
+    dark: { ...violetDark },
+    name: 'violet',
+  },
+  {
+    light: { ...indigo },
+    dark: { ...indigoDark },
+    name: 'indigo',
+  },
+  {
+    light: { ...blue },
+    dark: { ...blueDark },
+    name: 'blue',
+  },
+  {
+    light: { ...cyan },
+    dark: { ...cyanDark },
+    name: 'cyan',
+  },
+  {
+    light: { ...teal },
+    dark: { ...tealDark },
+    name: 'teal',
+  },
+  {
+    light: { ...green },
+    dark: { ...greenDark },
+    name: 'green',
+  },
+  {
+    light: { ...grass },
+    dark: { ...grassDark },
+    name: 'grass',
+  },
+  {
+    light: { ...brown },
+    dark: { ...brownDark },
+    name: 'brown',
+  },
+  {
+    light: { ...orange },
+    dark: { ...orangeDark },
+    name: 'orange',
+  },
+  {
+    light: { ...sky },
+    dark: { ...skyDark },
+    name: 'sky',
+  },
+  {
+    light: { ...mint },
+    dark: { ...mintDark },
+    name: 'mint',
+  },
+  {
+    light: { ...lime },
+    dark: { ...limeDark },
+    name: 'lime',
+  },
+  {
+    light: { ...yellow },
+    dark: { ...yellowDark },
+    name: 'yellow',
+  },
+  {
+    light: { ...amber },
+    dark: { ...amberDark },
+    name: 'amber',
+  },
+  {
+    light: { ...gold },
+    dark: { ...goldDark },
+    name: 'gold',
+  },
+  {
+    light: { ...bronze },
+    dark: { ...bronzeDark },
+    name: 'bronze',
+  },
+  {
+    light: { ...whiteA },
+    dark: { ...whiteADark },
+    name: 'whiteA',
+  },
+  {
+    light: { ...blackA },
+    dark: { ...blackADark },
+    name: 'blackA',
+  },
+  {
+    light: { ...gray },
+    dark: { ...grayDark },
+    name: 'gray',
+  },
+  {
+    light: { ...mauve },
+    dark: { ...mauveDark },
+    name: 'mauve',
+  },
+  {
+    light: { ...slate },
+    dark: { ...slateDark },
+    name: 'slate',
+  },
+  {
+    light: { ...sage },
+    dark: { ...sageDark },
+    name: 'sage',
+  },
+  {
+    light: { ...olive },
+    dark: { ...oliveDark },
+    name: 'olive',
+  },
+  {
+    light: { ...sand },
+    dark: { ...sandDark },
+    name: 'sand',
+  },
+];

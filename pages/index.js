@@ -1,14 +1,12 @@
 import { useState } from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
 
-import { Half2Icon, SunIcon } from '@radix-ui/react-icons';
+import { SunIcon } from '@radix-ui/react-icons';
 import { useTheme } from 'next-themes';
-import Header from '../components/Header';
-import { Text } from '../components/Text';
 import { Box } from '../components/Box';
-import { Button } from '../components/Button';
 import { View } from '../components/Views/View';
 import { Sidebar } from '../components/Sidebar';
+
+import { radixColors } from '../theme/variants/colors';
 
 export default function Home() {
   const [step, setStep] = useState(0);
@@ -19,6 +17,8 @@ export default function Home() {
     tertiary: '',
     error: '',
     success: '',
+    text: '',
+    container_bg: '',
   });
 
   const setColors = (newColor, property) => {
@@ -83,24 +83,28 @@ export default function Home() {
 
   });
 
-  const addToJson = (data, key) => {
-    setJsonObject({
-      ...jsonObject,
-      [key]: {
-        ...jsonObject[key],
-        ...data,
-      },
-    });
-  };
+  const addToJson = (data, key, noMerge) => (noMerge ? setJsonObject({
+    ...jsonObject,
+    [key]: {
+      ...data,
+    },
+  }) : setJsonObject({
+    ...jsonObject,
+    [key]: {
+      ...jsonObject[key],
+      ...data,
+    },
+  }));
 
   return (
-    <Box css={{ bg: '$sage3' }}>
+    <Box css={{ bg: '$sage3', display: 'flex' }}>
 
       {/* <Header /> */}
 
-      <Sidebar jsonObject={jsonObject} addToJson={addToJson} colors={colors} setColors={setColors} />
+      <Sidebar jsonObject={jsonObject} addToJson={addToJson} colors={colors} setColors={setColors} radixColors={radixColors} />
       <Box css={{
-        margin: 'auto', p: '$9', marginLeft: '500px',
+        p: '$9',
+        flex: 2,
       }}
       >
         <Box css={{ display: 'flex' }}>
@@ -119,6 +123,7 @@ export default function Home() {
             </Box>
 
             <View
+              radixColors={radixColors}
               step={step}
               addToJson={addToJson}
               jsonObject={jsonObject}

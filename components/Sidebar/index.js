@@ -9,6 +9,7 @@ import { Colors } from '../Views/Colors';
 import { PrimaryColors } from '../Views/Colors/PrimaryColors';
 import { Space } from '../Views/Space';
 import { styled } from '../../theme/stitches.config';
+import ScrollArea from '../ScrollArea';
 import {
   Tabs, TabsList, TabsTrigger, TabsContent,
 } from '../Tabs';
@@ -20,19 +21,19 @@ const StyledHighlighter = styled(SyntaxHighlighter, {
 });
 
 export const Sidebar = ({
-  jsonObject, addToJson, colors,
+  jsonObject,
+  addToJson,
+  colors,
   setColors,
+  radixColors,
 }) => (
   <Box css={{
-    position: 'fixed',
-    top: '0px',
-    left: '0px',
-    bottom: '0px',
-    width: '500px',
     borderRightWidth: '1px',
     borderRightStyle: 'solid',
     borderBottomWidth: '0px',
     zIndex: '$0',
+    flex: 1,
+    maxWidth: '500px',
     overflow: 'auto',
     '.hljs-attr': {
       color: '$hiContrast',
@@ -57,18 +58,21 @@ export const Sidebar = ({
           </TabsList>
 
           <TabsContent value="sub_tab1">
+
             <Colors
               addToJson={addToJson}
               colors={colors}
               setColors={setColors}
+              radixColors={radixColors}
             />
+
           </TabsContent>
           <TabsContent value="sub_tab2">
             <PrimaryColors
-              color={jsonObject.colors}
               addToJson={addToJson}
               colors={colors}
               setColors={setColors}
+              radixColors={radixColors}
             />
           </TabsContent>
         </Tabs>
@@ -76,7 +80,7 @@ export const Sidebar = ({
       </TabsContent>
       <TabsContent value="tab2">
         <Text css={{ paddingBottom: '$4', fontWeight: '$1' }}>Space</Text>
-        <Space />
+        <Space addToJson={addToJson} />
 
       </TabsContent>
 

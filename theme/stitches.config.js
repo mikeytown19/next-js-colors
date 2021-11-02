@@ -159,6 +159,7 @@ const stitches = createStitches({
       4: 'rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;',
     },
     space: {
+      0: 0,
       1: '0.3rem',
       2: '0.5rem',
       3: '0.8rem',
