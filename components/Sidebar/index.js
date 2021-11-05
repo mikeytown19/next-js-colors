@@ -34,6 +34,7 @@ export const Sidebar = ({
     zIndex: '$0',
     flex: 1,
     maxWidth: '500px',
+    minWidth: '450px',
     overflow: 'auto',
     '.hljs-attr': {
       color: '$hiContrast',

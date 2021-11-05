@@ -57,6 +57,58 @@ export const PrimaryColors = ({
           setColors={setColors}
         />
       </Box>
+
+      <Box css={{
+        display: 'flex', alignItems: 'center', mb: '$4', jc: 'space-between',
+      }}
+      >
+        <Text css={{ fs: '$1' }}>text</Text>
+        <DropdownMenuDemo
+          addToJson={addToJson}
+          token="text"
+          colors={colors}
+          setColors={setColors}
+        />
+      </Box>
+
+      <Box css={{
+        display: 'flex', alignItems: 'center', mb: '$4', jc: 'space-between',
+      }}
+      >
+        <Text css={{ fs: '$1' }}>background</Text>
+        <DropdownMenuDemo
+          addToJson={addToJson}
+          token="background"
+          colors={colors}
+          setColors={setColors}
+        />
+      </Box>
+
+      <Box css={{
+        display: 'flex', alignItems: 'center', mb: '$4', jc: 'space-between',
+      }}
+      >
+        <Text css={{ fs: '$1' }}>muted</Text>
+        <DropdownMenuDemo
+          addToJson={addToJson}
+          token="muted"
+          colors={colors}
+          setColors={setColors}
+        />
+      </Box>
+      <Box css={{
+        display: 'flex', alignItems: 'center', mb: '$4', jc: 'space-between',
+      }}
+      >
+        <Text css={{ fs: '$1' }}>accent</Text>
+        <DropdownMenuDemo
+          addToJson={addToJson}
+          token="accent"
+          colors={colors}
+          setColors={setColors}
+        />
+      </Box>
+
       <Box css={{
         display: 'flex', alignItems: 'center', mb: '$4', jc: 'space-between',
       }}
@@ -77,32 +129,6 @@ export const PrimaryColors = ({
         <DropdownMenuDemo
           addToJson={addToJson}
           token="success"
-          colors={colors}
-          setColors={setColors}
-        />
-      </Box>
-
-      <Box css={{
-        display: 'flex', alignItems: 'center', mb: '$4', jc: 'space-between',
-      }}
-      >
-        <Text css={{ fs: '$1' }}>text</Text>
-        <DropdownMenuDemo
-          addToJson={addToJson}
-          token="text"
-          colors={colors}
-          setColors={setColors}
-        />
-      </Box>
-
-      <Box css={{
-        display: 'flex', alignItems: 'center', mb: '$4', jc: 'space-between',
-      }}
-      >
-        <Text css={{ fs: '$1' }}>container_bg</Text>
-        <DropdownMenuDemo
-          addToJson={addToJson}
-          token="container_bg"
           colors={colors}
           setColors={setColors}
         />

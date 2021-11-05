@@ -1,7 +1,10 @@
 import { styled } from '../../theme/stitches.config';
-import { fontVariants } from '../../theme/variants';
+import {
+  fontVariants, widthVariants, marginVariants, paddingVariants,
+} from '../../theme/variants';
 
 export const Text = styled('p', {
+  pb: '$5',
   variants: {
     size: {
       sm: {
@@ -18,4 +21,5 @@ export const Text = styled('p', {
       },
     },
   },
-}, fontVariants);
+
+}, fontVariants, widthVariants, marginVariants, paddingVariants);

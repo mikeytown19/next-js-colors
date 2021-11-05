@@ -12,13 +12,16 @@ export default function Home() {
   const [step, setStep] = useState(0);
   const { theme, setTheme } = useTheme();
   const [colors, updateColors] = useState({
-    primary: '',
-    secondary: '',
+    primary: 'teal',
+    secondary: 'pink',
     tertiary: '',
+    accent: '',
+    muted: '',
     error: '',
     success: '',
     text: '',
-    container_bg: '',
+    background: '',
+    border: '',
   });
 
   const setColors = (newColor, property) => {
@@ -79,6 +82,7 @@ export default function Home() {
     },
     transitions: {},
     colors: {
+
     },
 
   });

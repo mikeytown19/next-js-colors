@@ -29,7 +29,7 @@ export const ThemeColors = ({
             }}
             >
               {item[0].replace(/[0-9]/g, '')}
-                </Text>)}
+            </Text>)}
             <Box
               key={item[1]}
               css={{
