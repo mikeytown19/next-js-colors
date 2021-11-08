@@ -5,7 +5,7 @@ export const flexVariants = css({
     flex: {
       true: {
         flexWrap: 'wrap',
-        '@bp2': {
+        '@bp2_plus': {
           display: 'flex',
           flexWrap: 'initial',
         },

@@ -204,6 +204,11 @@ const stitches = createStitches({
     bp2: '(min-width: 900px)',
     bp3: '(min-width: 1200px)',
     bp4: '(min-width: 1800px)',
+    // adds 500 to each breakpoint to makeup for the side bar width
+    bp1_plus: '(min-width: 1020px)',
+    bp2_plus: '(min-width: 1400px)',
+    bp3_plus: '(min-width: 1700px)',
+    bp4_plus: '(min-width: 2300px)',
     motion: '(prefers-reduced-motion)',
     hover: '(any-hover: hover)',
     dark: '(prefers-color-scheme: dark)',
