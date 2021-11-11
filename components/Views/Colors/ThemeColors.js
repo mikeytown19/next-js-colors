@@ -1,5 +1,4 @@
-import React from 'react';
-import { PlusCircledIcon } from '@modulz/radix-icons';
+/* eslint-disable react/jsx-indent */
 import { Text } from '../../Text';
 import { Box } from '../../Box';
 // replace(/[0-9]/g, '')
@@ -27,9 +26,9 @@ export const ThemeColors = ({
               p: '$3',
               fontWeight: '$6',
             }}
-            >
-              {item[0].replace(/[0-9]/g, '')}
-            </Text>)}
+            >{item[0].replace(/[0-9]/g, '')}
+
+                </Text>)}
             <Box
               key={item[1]}
               css={{
@@ -44,6 +43,7 @@ export const ThemeColors = ({
                   bg: '$slate1',
                 },
               }}
+              // eslint-disable-next-line no-undef
               onClick={() => navigator.clipboard.writeText(item[1])}
             />
           </>

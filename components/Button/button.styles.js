@@ -1,5 +1,5 @@
 import { styled } from '../../theme/stitches.config';
-import { marginVariants, colorVariants } from '../../theme/variants';
+import { marginVariants } from '../../theme/variants';
 
 export const Button = styled('button', {
   border: 0,
@@ -179,6 +179,6 @@ export const Button = styled('button', {
     bg: 'yellow',
   },
 
-}, marginVariants, colorVariants);
+}, marginVariants);
 
 export default Button;

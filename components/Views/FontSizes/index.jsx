@@ -9,6 +9,7 @@ export const FontSizes = ({ addToJson }) => {
       if (i === 0) {
         obj[i + 1] = `${Math.ceil(num)}px`;
       } else {
+        // eslint-disable-next-line no-param-reassign
         num *= 1.2;
         obj[i + 1] = `${Math.ceil(num)}px`;
       }

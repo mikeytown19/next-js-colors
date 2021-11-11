@@ -1,4 +1,3 @@
-import React from 'react';
 import { PlusCircledIcon } from '@modulz/radix-icons';
 import { Text } from '../../Text';
 import { Box } from '../../Box';
@@ -30,6 +29,7 @@ export const GridColors = ({
               bg: `$${name}${index}`,
             },
           }}
+          // eslint-disable-next-line no-undef
           onClick={() => navigator.clipboard.writeText(item[1])}
         />
 

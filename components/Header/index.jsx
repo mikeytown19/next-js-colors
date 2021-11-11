@@ -1,4 +1,3 @@
-import React from 'react';
 import { styled } from '../../theme/stitches.config';
 
 const Wrapper = styled('nav');

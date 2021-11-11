@@ -1,4 +1,3 @@
-import React from 'react';
 import { Text } from '../../Text';
 import { Button } from '../../Button';
 import { styled, createTheme } from '../../../theme/stitches.config';
@@ -6,7 +5,7 @@ import { ThemeColors } from '../Colors/ThemeColors';
 import { Space } from '../Space';
 import { Section } from '../../Section';
 import { Container } from '../../Container';
-import { Heading } from '../../Heading';
+
 import { Box } from '../../Box';
 import { Flex } from '../../Flex';
 

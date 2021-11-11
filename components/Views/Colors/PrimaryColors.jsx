@@ -1,9 +1,8 @@
-import React from 'react';
-import { PlusCircledIcon } from '@modulz/radix-icons';
 import { Text } from '../../Text';
 import { Box } from '../../Box';
-import DropdownMenuDemo from '../../Dropdown';
+import { DropdownMenuDemo } from '../../Dropdown';
 // replace(/[0-9]/g, '')
+
 export const PrimaryColors = ({
 
   addToJson,

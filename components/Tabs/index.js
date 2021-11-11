@@ -1,4 +1,3 @@
-import React from 'react';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 
 import { styled } from '../../theme/stitches.config';

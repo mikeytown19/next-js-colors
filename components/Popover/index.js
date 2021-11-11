@@ -1,4 +1,3 @@
-import React from 'react';
 import { keyframes } from '@stitches/react';
 
 import * as PopoverPrimitive from '@radix-ui/react-popover';

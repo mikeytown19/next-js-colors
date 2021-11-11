@@ -9,7 +9,6 @@ import { Sidebar } from '../components/Sidebar';
 import { radixColors } from '../theme/variants/colors';
 
 export default function Home() {
-  const [step, setStep] = useState(0);
   const { theme, setTheme } = useTheme();
   const [colors, updateColors] = useState({
     primary: 'teal',
@@ -30,6 +29,7 @@ export default function Home() {
       [property]: newColor,
     });
   };
+
   const [jsonObject, setJsonObject] = useState({
 
     space: { },
@@ -128,7 +128,6 @@ export default function Home() {
 
             <View
               radixColors={radixColors}
-              step={step}
               addToJson={addToJson}
               jsonObject={jsonObject}
               colors={colors}

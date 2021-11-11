@@ -1,7 +1,6 @@
-import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { ClipboardCopyIcon } from '@radix-ui/react-icons';
-import * as TabsPrimitive from '@radix-ui/react-tabs';
+
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Button } from '../Button';
@@ -9,7 +8,7 @@ import { Colors } from '../Views/Colors';
 import { PrimaryColors } from '../Views/Colors/PrimaryColors';
 import { Space } from '../Views/Space';
 import { styled } from '../../theme/stitches.config';
-import ScrollArea from '../ScrollArea';
+
 import {
   Tabs, TabsList, TabsTrigger, TabsContent,
 } from '../Tabs';
@@ -98,6 +97,7 @@ export const Sidebar = ({
         <Box>
           <Button
             css={{ marginLeft: '$3' }}
+            // eslint-disable-next-line no-undef
             onClick={() => navigator.clipboard.writeText(JSON.stringify(jsonObject))}
             bg="slate"
             size="small"

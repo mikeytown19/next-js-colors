@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { Text } from '../../Text';
 import { Box } from '../../Box';
 import { Button } from '../../Button';
 
@@ -10,6 +8,7 @@ export const Space = ({ addToJson }) => {
       if (i === 0) {
         obj[i] = 0;
       } else {
+        // eslint-disable-next-line no-param-reassign
         num *= 2;
         obj[i] = `${num}px`;
       }

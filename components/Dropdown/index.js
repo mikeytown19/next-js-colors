@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { radixColors } from '../../theme/variants/colors';
 import ScrollArea from '../ScrollArea';
 import { styled } from '../../theme/stitches.config';
