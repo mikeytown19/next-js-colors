@@ -4,6 +4,7 @@ import { Box } from '../../Box';
 
 export const GridColors = ({
   color, name, addToJson,
+  setColorTheme,
 }) => (
   <Box>
     <Text css={{ paddingBottom: '$3', fs: '$2', borderBottom: `solid 4px $${name}3` }}>{name}</Text>
@@ -44,6 +45,7 @@ export const GridColors = ({
         }}
         onClick={() => {
           addToJson(color, 'colors');
+          setColorTheme(...[name]);
         }}
       >
         <PlusCircledIcon />

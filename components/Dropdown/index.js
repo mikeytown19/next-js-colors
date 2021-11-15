@@ -18,7 +18,7 @@ const IconButton = styled('button', {
 });
 
 export const DropdownMenuDemo = ({
-  setColors, colors, token, addToJson,
+  setColors, colors, token, addToJson, setColorTheme,
 }) => (
   <Styled.DropdownMenu>
     <Styled.DropdownMenuTrigger asChild>
@@ -38,8 +38,8 @@ export const DropdownMenuDemo = ({
         <Styled.DropdownMenuRadioGroup
           value={colors[token]}
           onValueChange={(e) => {
-            setColors(colors[token] = e.name);
-            // addToJson(e.light, 'colors');
+            setColors(colors[token] = e.name, token);
+            setColorTheme(e.name);
             addToJson({ [token]: `$${e.name}9`, ...e.light }, 'colors');
           }}
         >

@@ -10,19 +10,18 @@ import { Box } from '../../Box';
 import { Flex } from '../../Flex';
 
 export const View = ({
-  jsonObject, colors,
+  jsonObject, colors, radixColors, colorTheme,
 }) => {
   const customTheme = createTheme('custom-theme', {
     ...jsonObject,
   });
-
   const Main = styled('main');
 
   return (
     <Main className={customTheme} css={{ flex: '1' }}>
-      <Text ta="center" as="h1">Hero's</Text>
+      <ThemeColors radixColors={radixColors} colorTheme={colorTheme} color={jsonObject.colors} colors={colors} />
 
-      <Section css={{
+      {/* <Section css={{
         bg: `$${colors.background}1`,
         mt: '$8',
       }}
@@ -106,10 +105,9 @@ export const View = ({
             </Button>
           </Box>
         </Container>
-      </Section>
+      </Section> */}
 
-      <ThemeColors color={jsonObject.colors} />
-      <Space />
+      {/* <Space /> */}
     </Main>
 
   );

@@ -10,9 +10,17 @@ import { radixColors } from '../theme/variants/colors';
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
+  const [colorTheme, updateColorTheme] = useState([]);
+
+  const setColorTheme = (c) => {
+    if (!colorTheme.includes(c)) {
+      updateColorTheme([...colorTheme, c]);
+    }
+  };
+
   const [colors, updateColors] = useState({
-    primary: 'teal',
-    secondary: 'pink',
+    primary: '',
+    secondary: '',
     tertiary: '',
     accent: '',
     muted: '',
@@ -105,13 +113,20 @@ export default function Home() {
 
       {/* <Header /> */}
 
-      <Sidebar jsonObject={jsonObject} addToJson={addToJson} colors={colors} setColors={setColors} radixColors={radixColors} />
+      <Sidebar
+        setColorTheme={setColorTheme}
+        jsonObject={jsonObject}
+        addToJson={addToJson}
+        colors={colors}
+        setColors={setColors}
+        radixColors={radixColors}
+      />
       <Box css={{
         p: '$9',
         flex: 2,
       }}
       >
-        <Box css={{ display: 'flex' }}>
+        <Box>
 
           <Box>
             <Box css={{
@@ -127,6 +142,8 @@ export default function Home() {
             </Box>
 
             <View
+              colorTheme={colorTheme}
+              setColorTheme={setColorTheme}
               radixColors={radixColors}
               addToJson={addToJson}
               jsonObject={jsonObject}

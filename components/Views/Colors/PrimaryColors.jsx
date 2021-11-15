@@ -8,6 +8,8 @@ export const PrimaryColors = ({
   addToJson,
   colors,
   setColors,
+  radixColors,
+  setColorTheme,
 }) => (
   <Box>
     <Text as="h2" css={{ mt: '$10', mb: '$6' }}>Theme Colors</Text>
@@ -26,6 +28,7 @@ export const PrimaryColors = ({
       >
         <Text css={{ fs: '$1' }}>primary</Text>
         <DropdownMenuDemo
+          setColorTheme={setColorTheme}
           addToJson={addToJson}
           token="primary"
           colors={colors}
@@ -38,6 +41,7 @@ export const PrimaryColors = ({
       >
         <Text css={{ fs: '$1' }}>secondary</Text>
         <DropdownMenuDemo
+          setColorTheme={setColorTheme}
           addToJson={addToJson}
           token="secondary"
           colors={colors}
@@ -50,6 +54,7 @@ export const PrimaryColors = ({
       >
         <Text css={{ fs: '$1' }}>tertiary</Text>
         <DropdownMenuDemo
+          setColorTheme={setColorTheme}
           addToJson={addToJson}
           token="tertiary"
           colors={colors}
@@ -63,6 +68,7 @@ export const PrimaryColors = ({
       >
         <Text css={{ fs: '$1' }}>text</Text>
         <DropdownMenuDemo
+          setColorTheme={setColorTheme}
           addToJson={addToJson}
           token="text"
           colors={colors}
@@ -76,6 +82,7 @@ export const PrimaryColors = ({
       >
         <Text css={{ fs: '$1' }}>background</Text>
         <DropdownMenuDemo
+          setColorTheme={setColorTheme}
           addToJson={addToJson}
           token="background"
           colors={colors}
@@ -89,6 +96,7 @@ export const PrimaryColors = ({
       >
         <Text css={{ fs: '$1' }}>muted</Text>
         <DropdownMenuDemo
+          setColorTheme={setColorTheme}
           addToJson={addToJson}
           token="muted"
           colors={colors}
@@ -101,6 +109,7 @@ export const PrimaryColors = ({
       >
         <Text css={{ fs: '$1' }}>accent</Text>
         <DropdownMenuDemo
+          setColorTheme={setColorTheme}
           addToJson={addToJson}
           token="accent"
           colors={colors}
@@ -114,6 +123,7 @@ export const PrimaryColors = ({
       >
         <Text css={{ fs: '$1' }}>error</Text>
         <DropdownMenuDemo
+          setColorTheme={setColorTheme}
           addToJson={addToJson}
           token="error"
           colors={colors}
@@ -126,6 +136,7 @@ export const PrimaryColors = ({
       >
         <Text css={{ fs: '$1' }}>success</Text>
         <DropdownMenuDemo
+          setColorTheme={setColorTheme}
           addToJson={addToJson}
           token="success"
           colors={colors}

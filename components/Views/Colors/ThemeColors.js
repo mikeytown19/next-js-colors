@@ -1,54 +1,67 @@
 /* eslint-disable react/jsx-indent */
+import { useTheme } from 'next-themes';
 import { Text } from '../../Text';
 import { Box } from '../../Box';
-// replace(/[0-9]/g, '')
+
 export const ThemeColors = ({
-  color, name,
-}) => (
+  colorTheme, radixColors, colors,
+}) => {
+  const { theme } = useTheme();
+  const primaryColors = Object.entries(colors);
+
+  return (
   <Box>
     <Text as="h2" css={{ mt: '$10', mb: '$6' }}>Colors</Text>
-
-    <Box
-      css={{
-        display: 'grid',
-        margin: '10px',
-        alignItems: 'center',
-
-      }}
+    <Box css={{
+      display: 'grid', alignItems: 'center', gridTemplateColumns: 'repeat(10, 1fr)', gap: '15px',
+    }}
     >
 
-      <Box css={{ display: 'grid', gridTemplateColumns: 'repeat(13, 1fr)', gap: '5px' }}>
-        {Object.entries(color).map((item, index) => (
-          <> {index % 12 === 0
-            && (<Text css={{
-              fontSize: '$1',
-              mx: '1px',
-              p: '$3',
-              fontWeight: '$6',
-            }}
-            >{item[0].replace(/[0-9]/g, '')}
-
-                </Text>)}
-            <Box
-              key={item[1]}
-              css={{
-                mx: '1px',
-                p: '$3',
-
-                border: `solid 1px $${name}5`,
-                bg: `$${item[0]}`,
-                transition: 'background-color .2s',
-                '&:hover': {
-                  cursor: 'pointer',
-                  bg: '$slate1',
-                },
+      {primaryColors && primaryColors.map((item) => item[1] && (
+        <Box css={{ display: 'flex', flexDirection: 'column-reverse' }}>
+            <Text css={{ fs: '$2', mt: '$2' }}>{item[0]}</Text>
+            <Box>
+              <Box css={{
+                width: '100%',
+                backgroundColor: `$${item[1]}9`,
+                padding: '$space$5',
               }}
-              // eslint-disable-next-line no-undef
-              onClick={() => navigator.clipboard.writeText(item[1])}
-            />
-          </>
-        ))}
-      </Box>
+              />
+            </Box>
+        </Box>
+      ))}
+    </Box>
+
+    <Box css={{ display: 'flex', flexDirection: 'column' }}>
+      {colorTheme.map((color) => {
+        const colorValues = Object.values(radixColors).find(({ name }) => name === color)[theme];
+        return (
+          <Box css={{
+            display: 'grid', alignItems: 'center', gridTemplateColumns: 'repeat(13, 1fr)', gap: '5px', width: '100%', my: '$1',
+          }}
+          >
+          <Box>
+            {color}
+          </Box>
+              { colorValues && Object.keys(colorValues).map((colorValue) => (
+                <Box
+                  css={{
+                    p: '$6',
+                    mx: '1px',
+                    border: `solid 1px $${colorValue}5`,
+                    bg: `$${colorValue}`,
+                    transition: 'background-color .2s',
+                    '&:hover': {
+                      cursor: 'pointer',
+                      bg: '$slate1',
+                    },
+                  }}
+                />))}
+
+          </Box>
+        );
+      })}
     </Box>
   </Box>
-);
+  );
+};

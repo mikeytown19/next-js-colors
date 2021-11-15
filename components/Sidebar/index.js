@@ -25,6 +25,7 @@ export const Sidebar = ({
   colors,
   setColors,
   radixColors,
+  setColorTheme,
 }) => (
   <Box css={{
     borderRightWidth: '1px',
@@ -64,6 +65,7 @@ export const Sidebar = ({
               colors={colors}
               setColors={setColors}
               radixColors={radixColors}
+              setColorTheme={setColorTheme}
             />
 
           </TabsContent>
@@ -73,6 +75,8 @@ export const Sidebar = ({
               colors={colors}
               setColors={setColors}
               radixColors={radixColors}
+              setColorTheme={setColorTheme}
+
             />
           </TabsContent>
         </Tabs>
