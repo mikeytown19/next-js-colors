@@ -24,9 +24,12 @@ export const ThemeColors = ({
               <Box css={{
                 width: '100%',
                 backgroundColor: `$${item[1]}9`,
-                padding: '$space$5',
+                padding: '$3',
+                fs: '$2',
+                color: '$hiContrast',
               }}
-              />
+              > {item[1]}
+              </Box>
             </Box>
         </Box>
       ))}
@@ -43,17 +46,16 @@ export const ThemeColors = ({
           <Box>
             {color}
           </Box>
-              { colorValues && Object.keys(colorValues).map((colorValue) => (
+              { colorValues && Object.keys(colorValues).map((colorValue, index, arr) => (
                 <Box
                   css={{
                     p: '$6',
                     mx: '1px',
-                    border: `solid 1px $${colorValue}5`,
                     bg: `$${colorValue}`,
                     transition: 'background-color .2s',
                     '&:hover': {
                       cursor: 'pointer',
-                      bg: '$slate1',
+                      bg: `$${arr[index - 1]}`,
                     },
                   }}
                 />))}

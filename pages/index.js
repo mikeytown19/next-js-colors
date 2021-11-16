@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { SunIcon } from '@radix-ui/react-icons';
 import { useTheme } from 'next-themes';
@@ -41,7 +41,19 @@ export default function Home() {
   const [jsonObject, setJsonObject] = useState({
 
     space: { },
-    fontSizes: { },
+    fontSizes: {
+      0: 0,
+      1: '12px',
+      2: '15px',
+      3: '18px',
+      4: '21px',
+      5: '25px',
+      6: '30px',
+      7: '36px',
+      8: '43px',
+      9: '52px',
+      10: '62px',
+    },
     fonts: {
       body: 'Untitled Sans, -apple-system, system-ui, sans-serif',
       mono: 'Söhne Mono, menlo, monospace',
@@ -57,7 +69,19 @@ export default function Home() {
       8: '800',
       9: '900',
     },
-    lineHeights: {},
+    lineHeights: {
+      0: 0,
+      1: '12px',
+      2: '15px',
+      3: '18px',
+      4: '21px',
+      5: '25px',
+      6: '30px',
+      7: '36px',
+      8: '43px',
+      9: '52px',
+      10: '62px',
+    },
     letterSpacings: {},
     sizes: {
       0: 0,
@@ -81,12 +105,22 @@ export default function Home() {
       2: '4px',
       3: '8px',
       4: '2em',
+      round: '50%',
+      pill: '9999px',
     },
-    shadows: {},
+    shadows: {
+      1: 'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;',
+      2: 'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;',
+      3: 'rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;',
+      4: 'rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;',
+    },
     zIndices: {
       0: 0,
-      1: '1',
+      1: '100',
       2: '200',
+      3: '300',
+      4: '400',
+      max: '999',
     },
     transitions: {},
     colors: {
@@ -94,6 +128,18 @@ export default function Home() {
     },
 
   });
+  // add jsonobject to local storage
+  const saveJsonObject = () => {
+    // eslint-disable-next-line no-undef
+    localStorage.setItem('jsonObject', JSON.stringify(jsonObject));
+  };
+
+  useEffect(() => {
+    if (Object.keys(jsonObject.colors).length && jsonObject.colors.constructor === Object) {
+      setJsonObject(jsonObject);
+      localStorage.setItem('jsonObject', JSON.stringify(jsonObject));
+    }
+  }, [jsonObject]);
 
   const addToJson = (data, key, noMerge) => (noMerge ? setJsonObject({
     ...jsonObject,

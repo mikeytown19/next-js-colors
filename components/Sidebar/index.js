@@ -8,7 +8,7 @@ import { Colors } from '../Views/Colors';
 import { PrimaryColors } from '../Views/Colors/PrimaryColors';
 import { Space } from '../Views/Space';
 import { styled } from '../../theme/stitches.config';
-
+import { utils } from '../../theme/utils';
 import {
   Tabs, TabsList, TabsTrigger, TabsContent,
 } from '../Tabs';
@@ -44,9 +44,7 @@ export const Sidebar = ({
     <Tabs defaultValue="tab1">
       <TabsList aria-label="Manage your account">
         <TabsTrigger value="tab1">Colors</TabsTrigger>
-        <TabsTrigger value="tab2">Space</TabsTrigger>
-        <TabsTrigger value="tab3">Fonts</TabsTrigger>
-        <TabsTrigger value="tab4">Sizes</TabsTrigger>
+
         <TabsTrigger value="tab5">Export</TabsTrigger>
 
       </TabsList>
@@ -102,7 +100,11 @@ export const Sidebar = ({
           <Button
             css={{ marginLeft: '$3' }}
             // eslint-disable-next-line no-undef
-            onClick={() => navigator.clipboard.writeText(JSON.stringify(jsonObject))}
+            onClick={() => navigator.clipboard.writeText(JSON.stringify({
+              theme: {
+                ...jsonObject,
+              },
+            }, null, 2))}
             bg="slate"
             size="small"
             icon={<ClipboardCopyIcon />}
@@ -110,7 +112,11 @@ export const Sidebar = ({
           </Button>
 
           <StyledHighlighter language="json">
-            {JSON.stringify(jsonObject, null, 2)}
+            {JSON.stringify({
+              theme: {
+                ...jsonObject,
+              },
+            }, null, 2)}
           </StyledHighlighter>
         </Box>
 
