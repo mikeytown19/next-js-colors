@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { useState, useEffect } from 'react';
 
 import { SunIcon } from '@radix-ui/react-icons';
@@ -11,6 +12,12 @@ import { radixColors } from '../theme/variants/colors';
 export default function Home() {
   const { theme, setTheme } = useTheme();
   const [colorTheme, updateColorTheme] = useState([]);
+
+  useEffect(() => {
+    if (!theme || theme === 'system') {
+      setTheme('dark');
+    }
+  }, []);
 
   const setColorTheme = (c) => {
     if (!colorTheme.includes(c)) {
@@ -128,18 +135,22 @@ export default function Home() {
     },
 
   });
-  // add jsonobject to local storage
-  const saveJsonObject = () => {
-    // eslint-disable-next-line no-undef
-    localStorage.setItem('jsonObject', JSON.stringify(jsonObject));
-  };
+
+  // is kich theme in local storage, override json object state
+  useEffect(() => {
+    if (localStorage.getItem('kickColorTheme')) {
+      updateColorTheme(JSON.parse(localStorage.getItem('kickColorTheme')));
+      setJsonObject(JSON.parse(localStorage.getItem('kichTheme')));
+    }
+  }, []);
 
   useEffect(() => {
     if (Object.keys(jsonObject.colors).length && jsonObject.colors.constructor === Object) {
+      localStorage.setItem('kichTheme', JSON.stringify(jsonObject));
+      localStorage.setItem('kickColorTheme', JSON.stringify(colorTheme));
       setJsonObject(jsonObject);
-      localStorage.setItem('jsonObject', JSON.stringify(jsonObject));
     }
-  }, [jsonObject]);
+  }, [jsonObject, colorTheme]);
 
   const addToJson = (data, key, noMerge) => (noMerge ? setJsonObject({
     ...jsonObject,

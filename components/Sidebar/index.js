@@ -8,7 +8,7 @@ import { Colors } from '../Views/Colors';
 import { PrimaryColors } from '../Views/Colors/PrimaryColors';
 import { Space } from '../Views/Space';
 import { styled } from '../../theme/stitches.config';
-import { utils } from '../../theme/utils';
+
 import {
   Tabs, TabsList, TabsTrigger, TabsContent,
 } from '../Tabs';

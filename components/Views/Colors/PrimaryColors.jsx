@@ -1,14 +1,11 @@
 import { Text } from '../../Text';
 import { Box } from '../../Box';
 import { DropdownMenuDemo } from '../../Dropdown';
-// replace(/[0-9]/g, '')
 
 export const PrimaryColors = ({
-
   addToJson,
   colors,
   setColors,
-  radixColors,
   setColorTheme,
 }) => (
   <Box>
