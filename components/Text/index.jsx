@@ -5,6 +5,7 @@ import {
 
 export const Text = styled('p', {
   pb: '$5',
+  color: '$hiContrast',
   variants: {
     size: {
       sm: {

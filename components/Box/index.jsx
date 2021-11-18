@@ -4,6 +4,7 @@ import {
 } from '../../theme/variants';
 
 export const Box = styled('div', {
+  color: '$hiContrast',
   boxSizing: 'border-box',
   '.dummyImage': {
     width: '100%',

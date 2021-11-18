@@ -19,7 +19,6 @@ const StyledTrigger = styled(TabsPrimitive.Trigger, {
   all: 'unset',
   fontFamily: 'inherit',
 
-  padding: '0 10px',
   height: 35,
   flex: 1,
   display: 'flex',
@@ -39,11 +38,13 @@ const StyledTrigger = styled(TabsPrimitive.Trigger, {
 });
 
 const StyledContent = styled(TabsPrimitive.Content, {
-  flexGrow: 1,
-  padding: 20,
 
   outline: 'none',
   '&:focus': { boxShadow: '0 0 0 2px black' },
+  '&.content': {
+    padding: '$3',
+
+  },
 });
 
 export const Tabs = StyledTabs;

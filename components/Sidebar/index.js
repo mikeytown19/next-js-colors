@@ -49,14 +49,14 @@ export const Sidebar = ({
 
       </TabsList>
       <TabsContent value="tab1">
-        <Text css={{ paddingBottom: '$4', fontWeight: '$1' }}>Colors</Text>
-        <Tabs defaultValue="sub_tab1">
+        <Text css={{ p: '$4', fontWeight: '$1' }}>Colors</Text>
+        <Tabs defaultValue="sub_tab1" className="subTab">
           <TabsList aria-label="Manage your account">
             <TabsTrigger value="sub_tab1">Main Pallet</TabsTrigger>
             <TabsTrigger value="sub_tab2">Primary Colors</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="sub_tab1">
+          <TabsContent value="sub_tab1" className="content">
 
             <Colors
               addToJson={addToJson}
@@ -67,7 +67,7 @@ export const Sidebar = ({
             />
 
           </TabsContent>
-          <TabsContent value="sub_tab2">
+          <TabsContent value="sub_tab2" className="content">
             <PrimaryColors
               addToJson={addToJson}
               colors={colors}

@@ -27,7 +27,6 @@ export const ThemeColors = ({
                 backgroundColor: `$${item[1]}9`,
                 padding: '$3',
                 fs: '$2',
-                color: '$hiContrast',
 
               }}
               > {item[1]}
@@ -61,8 +60,9 @@ export const ThemeColors = ({
             >
                 { colorValues && Object.keys(colorValues).map((colorValue, index, arr) => (
                   <Box
+                    // eslint-disable-next-line no-undef
+                    onClick={() => navigator.clipboard.writeText(colorValues[colorValue])}
                     css={{
-
                       p: '$5',
                       bg: `$${colorValue}`,
                       transition: 'background-color .2s',
