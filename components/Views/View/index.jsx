@@ -2,7 +2,7 @@ import { styled, createTheme } from '../../../theme/stitches.config';
 import { ThemeColors } from '../Colors/ThemeColors';
 
 export const View = ({
-  jsonObject, colors, radixColors, colorTheme,
+  jsonObject, colors, radixColors, colorTheme, removeFromJson,
 }) => {
   const customTheme = createTheme('custom-theme', {
     ...jsonObject,
@@ -11,7 +11,7 @@ export const View = ({
 
   return (
     <Main className={customTheme} css={{ flex: '1' }}>
-      <ThemeColors radixColors={radixColors} colorTheme={colorTheme} color={jsonObject.colors} colors={colors} />
+      <ThemeColors radixColors={radixColors} colorTheme={colorTheme} color={jsonObject.colors} colors={colors} removeFromJson={removeFromJson} />
 
       {/* <Section css={{
         bg: `$${colors.background}1`,

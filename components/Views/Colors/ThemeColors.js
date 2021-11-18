@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-indent */
 import { useTheme } from 'next-themes';
+import { Cross1Icon } from '@modulz/radix-icons';
 import { Text } from '../../Text';
 import { Box } from '../../Box';
 
 export const ThemeColors = ({
-  colorTheme, radixColors, colors,
+  colorTheme, radixColors, colors, removeFromJson,
 }) => {
   const { theme } = useTheme();
   const primaryColors = Object.entries(colors);
@@ -40,26 +41,51 @@ export const ThemeColors = ({
         const colorValues = Object.values(radixColors).find(({ name }) => name === color)[theme];
         return (
           <Box css={{
-            display: 'grid', alignItems: 'center', gridTemplateColumns: 'repeat(13, 1fr)', gap: '5px', width: '100%', my: '$1',
+            display: 'flex',
+            flexDirection: 'column',
+            mb: '$3',
           }}
           >
-          <Box>
-            {color}
-          </Box>
-              { colorValues && Object.keys(colorValues).map((colorValue, index, arr) => (
-                <Box
-                  css={{
-                    p: '$6',
-                    mx: '1px',
-                    bg: `$${colorValue}`,
-                    transition: 'background-color .2s',
-                    '&:hover': {
-                      cursor: 'pointer',
-                      bg: `$${arr[index - 1]}`,
-                    },
-                  }}
-                />))}
+            <Box css={{
+              paddingBottom: '$3',
+              borderBottom: `solid $${color}7 2px`,
+            }}
+            >
+              {color}
+            </Box>
 
+            <Box css={{
+              display: 'grid', alignItems: 'center', gridTemplateColumns: 'repeat(13, 1fr)', gap: '5px', width: '100%', my: '$1',
+            }}
+            >
+                { colorValues && Object.keys(colorValues).map((colorValue, index, arr) => (
+                  <Box
+                    css={{
+
+                      p: '$7',
+                      mx: '1px',
+                      bg: `$${colorValue}`,
+                      transition: 'background-color .2s',
+                      '&:hover': {
+                        cursor: 'pointer',
+                        bg: `$${arr[index - 1]}`,
+                      },
+                    }}
+                  />))}
+                  <Box
+                    css={{
+                      p: '$6',
+                      mx: '1px',
+                      '&:hover': { cursor: 'pointer' },
+                    }}
+                    onClick={() => {
+                      removeFromJson(colorValues, color);
+                    }}
+                  >
+                    <Cross1Icon />
+                  </Box>
+
+            </Box>
           </Box>
         );
       })}

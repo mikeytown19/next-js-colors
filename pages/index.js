@@ -165,6 +165,16 @@ export default function Home() {
     },
   }));
 
+  const removeFromJson = (colorObject, key) => {
+    const newJson = { ...jsonObject };
+    colorTheme.splice(colorTheme.indexOf(key), 1);
+    Object.keys(colorObject).forEach((item) => {
+      delete newJson.colors[item];
+    });
+
+    setJsonObject(newJson);
+  };
+
   return (
     <Box css={{ bg: '$sage3', display: 'flex' }}>
 
@@ -180,7 +190,9 @@ export default function Home() {
       />
       <Box css={{
         p: '$9',
-        flex: 2,
+        flex: '2',
+        maxWidth: '1500px',
+
       }}
       >
         <Box>
@@ -205,6 +217,7 @@ export default function Home() {
               addToJson={addToJson}
               jsonObject={jsonObject}
               colors={colors}
+              removeFromJson={removeFromJson}
             />
 
           </Box>
