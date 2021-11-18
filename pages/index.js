@@ -197,7 +197,7 @@ export default function Home() {
       >
         <Box>
 
-          <Box>
+          <Box css={{ display: 'flex', flexDirection: 'row-reverse', alignItems: 'start' }}>
             <Box css={{
               display: 'flex',
               alignItems: 'center',

@@ -11,14 +11,15 @@ export const GridColors = ({
 
     <Box
       css={{
-        display: 'flex', margin: '10px', alignItems: 'center',
+        display: 'flex', my: '10px', alignItems: 'center',
       }}
     >
 
       {Object.entries(color).map((item, index) => (
 
         <Box
-          key={item[1]}
+          // eslint-disable-next-line react/no-array-index-key
+          key={item[1] + index}
           css={{
             mx: '1px',
             p: '$3',
@@ -38,6 +39,7 @@ export const GridColors = ({
       <Text
         css={{
           fs: '$1',
+          pb: 0,
           marginLeft: '$5',
           '&:hover': {
             cursor: 'pointer',

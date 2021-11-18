@@ -9,6 +9,7 @@ export const Colors = ({
   <>
     {radixColors.map((color) => (<GridColors
       addToJson={addToJson}
+      key={color.name}
       color={color.light}
       darkColor={color.dark}
       name={color.name}

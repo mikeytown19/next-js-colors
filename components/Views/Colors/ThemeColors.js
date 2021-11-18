@@ -12,15 +12,15 @@ export const ThemeColors = ({
 
   return (
   <Box>
-    <Text as="h2" css={{ mt: '$10', mb: '$6' }}>Colors</Text>
+    <Text as="h2" css={{ mt: '$5', mb: '$6' }}>Colors</Text>
     <Box css={{
       display: 'grid', alignItems: 'center', gridTemplateColumns: 'repeat(10, 1fr)', gap: '15px',
     }}
     >
 
       {primaryColors && primaryColors.map((item) => item[1] && (
-        <Box css={{ display: 'flex', flexDirection: 'column-reverse' }}>
-            <Text css={{ fs: '$2', mt: '$2' }}>{item[0]}</Text>
+        <Box css={{ display: 'flex', flexDirection: 'column', mb: '$8' }}>
+            <Text css={{ fs: '$2', mb: '0' }}>{item[0]}</Text>
             <Box>
               <Box css={{
                 width: '100%',
@@ -28,6 +28,7 @@ export const ThemeColors = ({
                 padding: '$3',
                 fs: '$2',
                 color: '$hiContrast',
+
               }}
               > {item[1]}
               </Box>
@@ -55,15 +56,14 @@ export const ThemeColors = ({
             </Box>
 
             <Box css={{
-              display: 'grid', alignItems: 'center', gridTemplateColumns: 'repeat(13, 1fr)', gap: '5px', width: '100%', my: '$1',
+              display: 'grid', alignItems: 'center', gridTemplateColumns: 'repeat(13, 1fr)', gap: '4px', width: '100%',
             }}
             >
                 { colorValues && Object.keys(colorValues).map((colorValue, index, arr) => (
                   <Box
                     css={{
 
-                      p: '$7',
-                      mx: '1px',
+                      p: '$5',
                       bg: `$${colorValue}`,
                       transition: 'background-color .2s',
                       '&:hover': {
@@ -74,8 +74,7 @@ export const ThemeColors = ({
                   />))}
                   <Box
                     css={{
-                      p: '$6',
-                      mx: '1px',
+                      p: '$5',
                       '&:hover': { cursor: 'pointer' },
                     }}
                     onClick={() => {
